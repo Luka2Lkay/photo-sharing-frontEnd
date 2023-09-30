@@ -1,0 +1,14 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+.links {
+    display: flex;
+    justify-content: space-evenly;
+    width: 10em;
+}  
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+}

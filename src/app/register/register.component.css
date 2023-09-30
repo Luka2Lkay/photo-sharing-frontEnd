@@ -1,0 +1,26 @@
+form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+
+  .register-btn {
+    width: 70%;
+    margin-left: 15%;
+  }
+
+  .container {
+    border: 2px solid gray;
+    width: 25%;
+    margin:  5em auto;
+    padding: 2em;
+  }
+
+  .login-text {
+    margin-top: 10px;
+    text-align: center;
+  }
