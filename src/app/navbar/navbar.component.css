@@ -10,9 +10,10 @@
 a {
     cursor: pointer;
     text-decoration: none;
-    color: #000;
+    color: #fff;
 }
 
 .active {
-    color: #fff
+    text-decoration: underline;
+    text-decoration-color: orangered;
 }

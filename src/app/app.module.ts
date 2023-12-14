@@ -17,11 +17,13 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardNavBarComponent } from './dashboard-nav-bar/dashboard-nav-bar.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
+    FooterComponent,
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
