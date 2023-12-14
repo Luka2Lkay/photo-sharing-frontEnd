@@ -4,11 +4,15 @@
 .links {
     display: flex;
     justify-content: space-evenly;
-    width: 10em;
+    column-gap: 2em;
 }  
 
 a {
     cursor: pointer;
     text-decoration: none;
-    color: #fff;
+    color: #000;
+}
+
+.active {
+    color: #fff
 }

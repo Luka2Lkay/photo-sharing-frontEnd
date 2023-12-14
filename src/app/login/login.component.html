@@ -1,24 +1,18 @@
+<app-navbar></app-navbar>
 <div class="container">
     <h1 style="text-align: center;">Log In</h1>
-    <form [formGroup]="loginForm">
+    <form [formGroup]="loginForm" (ngSubmit)="logIn()">
         <div mat-dialog-content class="content">
-         
                 <mat-form-field id="username" appearance="outline">
-                    <mat-label for="username">Username</mat-label>
+                    <mat-label for="username">Username/Email</mat-label>
                     <input matInput formControlName="username">
                 </mat-form-field>
-                <mat-form-field id="email" appearance="outline">
-                    <mat-label for="email">Email</mat-label>
-                    <input matInput formControlName="email" type="email">
-                </mat-form-field>
-                <mat-form-field id="password" appearance="outline">
+                <mat-form-field id="password" appearance="outline"> 
                     <mat-label for="password">Password</mat-label>
-                    <input matInput formControlName="password">
+                    <input matInput formControlName="password" type="password">
                 </mat-form-field>
-                <button mat-raised-button [disabled]="!loginForm.valid" color="accent" class="login-btn">Log In</button>
+                <button mat-raised-button [disabled]="!loginForm.valid" color="primary" class="login-btn" type="submit" (click)="logIn()">Log In</button>
             <p class="register-text">Don't have an account? <a routerLink="/register">Register</a></p>
         </div>
     </form>
 </div>
-
-

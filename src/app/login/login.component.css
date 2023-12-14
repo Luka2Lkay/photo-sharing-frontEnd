@@ -13,6 +13,9 @@ form {
     margin-left: 15%;
   }
 
+  input mat-input {
+    border: 1px solid red;
+  }
   .container {
     border: 2px solid gray;
     width: 25%;

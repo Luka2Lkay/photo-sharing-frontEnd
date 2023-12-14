@@ -1,0 +1,18 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+.links {
+    display: flex;
+    justify-content: space-evenly;
+    column-gap: 2em;
+}  
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+}
+
+.active {
+    color: #fff
+}

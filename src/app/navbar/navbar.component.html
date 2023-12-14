@@ -1,13 +1,10 @@
 <p>
-    <mat-toolbar color="accent">
-        <span>Share Photos</span>
+    <mat-toolbar color="primary">
+        <span>SharePhotos</span>
         <span class="example-spacer"></span>
         <div class="links">
-            <a *ngIf="!authenticatedUser" routerLink="login">Log In</a>
-            <a *ngIf="!authenticatedUser" routerLink="register">Register</a>
-            <button *ngIf="authenticatedUser" mat-button type="submit">Log Out</button>
-
+            <a routerLink="/login" routerLinkActive="active">Log In</a>
+            <a routerLink="/register" routerLinkActive="active">Register</a>
         </div>
-
     </mat-toolbar>
 </p>

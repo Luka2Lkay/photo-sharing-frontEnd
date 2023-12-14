@@ -6,8 +6,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit, OnDestroy {
-
-  public authenticatedUser = false
   
   ngOnInit(): void {
     
