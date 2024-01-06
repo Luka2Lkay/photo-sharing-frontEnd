@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit {
 
   invalidEmail: String = '';
   invalidPassword: String = '';
+  existingUser: String = ''
 
   registrationForm: FormGroup = new FormGroup({
     username: new FormControl('', Validators.required),
@@ -38,6 +39,7 @@ export class RegisterComponent implements OnInit {
       ) === false
     ) {
       this.invalidEmail = 'Invalid email';
+      this.registrationForm.reset()
       return
     } else if (password.length < 8) {
       this.invalidPassword = "password must be longer than 8 characters"
@@ -53,7 +55,6 @@ export class RegisterComponent implements OnInit {
       return
     } 
 
-
     this._authService.register(this.registrationForm.value).subscribe({
       next: () => {
         this._snackBarService.openSnackBar('Registered successfully!', 'Done');
@@ -61,7 +62,7 @@ export class RegisterComponent implements OnInit {
 
       },
       error: () => {
-        this._snackBarService.openSnackBar('User Already Exists', 'Failed');
+        this._snackBarService.openSnackBar('Error occured! Try again later', 'Failed');
       },
     });
   }
