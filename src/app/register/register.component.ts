@@ -14,10 +14,10 @@ export class RegisterComponent implements OnInit {
     private _router: Router,
     private _authService: AuthServiceService,
     private _snackBarService: SnackBarService
-  ) {}
+  ) { }
 
   invalidEmail: String = '';
-  notPasswordMatch: String = '';
+  invalidPassword: String = '';
 
   registrationForm: FormGroup = new FormGroup({
     username: new FormControl('', Validators.required),
@@ -26,26 +26,39 @@ export class RegisterComponent implements OnInit {
     confirmPassword: new FormControl('', Validators.required),
   });
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   register() {
+
+    const { password, confirmPassword, email } = this.registrationForm.value
+
     if (
       /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/g.test(
-        this.registrationForm.value.email
+        email
       ) === false
     ) {
       this.invalidEmail = 'Invalid email';
+      return
+    } else if (password.length < 8) {
+      this.invalidPassword = "password must be longer than 8 characters"
+      return
     } else if (
-      this.registrationForm.value.password !==
-      this.registrationForm.value.confirmPassword
+      password !==
+      confirmPassword
     ) {
-      this.notPasswordMatch = "Passwords don't match";
-    }
+      this.invalidPassword = "Passwords don't match";
+      return
+    } else if (!/[0-9]/.test(password)) {
+      this.invalidPassword = 'password must include at 1 one number'
+      return
+    } 
+
 
     this._authService.register(this.registrationForm.value).subscribe({
       next: () => {
         this._snackBarService.openSnackBar('Registered successfully!', 'Done');
         this._router.navigate(['/', 'login'])
+
       },
       error: () => {
         this._snackBarService.openSnackBar('User Already Exists', 'Failed');
