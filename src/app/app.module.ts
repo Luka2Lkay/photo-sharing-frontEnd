@@ -8,6 +8,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatCardModule} from '@angular/material/card';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -19,6 +20,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardNavBarComponent } from './dashboard-nav-bar/dashboard-nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProfileComponent } from './profile/profile.component';
+import { LikeComponent } from './like/like.component';
+import { PostDetailComponent } from './post-detail/post-detail.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ import { ProfileComponent } from './profile/profile.component';
     RegisterComponent,
     DashboardComponent,
     DashboardNavBarComponent,
-    ProfileComponent
+    ProfileComponent,
+    LikeComponent,
+    PostDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +48,8 @@ import { ProfileComponent } from './profile/profile.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
